@@ -8,7 +8,7 @@ Login → Home → Upload → Garment lock → Setup → Keyframe preview → Ge
 
 | Screen | File | Job |
 |---|---|---|
-| Sign in | `Login.dc.html` | Admin sign in, animated KYURATE tile grid |
+| Sign in | `Login.dc.html` | Admin sign in, spinning 3D pressed K mark |
 | Studio (home) | `HomeMix.dc.html` | Credits, drafts, projects, costs, models, queue |
 | Upload | `Upload.dc.html` | Garment photos + quality score |
 | Garment lock | `Lock.dc.html` | Confirm garment details the model must not drift on |
@@ -77,7 +77,6 @@ Sign-in card: 0.55 fill, `0 24px 60px rgba(26,26,26,0.1)`.
 | 20px | Draft rows |
 | 14 to 16px | Inputs, thumbnails, shot frames, glass caption on images |
 | 2 to 4px | Progress bars, chart bars |
-| 22% | Login grid tiles |
 
 ## Spacing and layout
 
@@ -105,9 +104,9 @@ Sign-in card: 0.55 fill, `0 24px 60px rgba(26,26,26,0.1)`.
 - **Shot frame**: 9:16, 16px radius. Failing shot gets a 2px `alert` ring.
 - **Empty slot**: hatch stripes with a 10px grey caption.
 
-## Login tile grid
+## Login mark
 
-5 × 5 grid of 56px tiles, 10px gap. Cream and black ceramic tiles (radial gradient, stacked 1 to 4px bottom shadows, fractal-noise grain). Lit tiles spell a K. Tiles flip in 3D on a 2.6s cycle, tilt toward the cursor (±15°), and speed up to 0.7s while signing in, then settle back to the K.
+The pressed K: one matte black tile with a K sunk into its face, rendered in 3D (three.js). It turns slowly, floats over a soft shadow, can be dragged to spin, spins fast while signing in, then settles facing front. Full spec in `LOGIN-DESIGN.md`.
 
 ## Motion
 

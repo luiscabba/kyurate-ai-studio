@@ -14,13 +14,14 @@ File: `Login.dc.html`. Admin sign in for Kyurate AI Studio. Root URL redirects h
 
 ## Brand block
 
-### Tile grid
-- 5 × 5 grid, 56px tiles, 10px gap, 6px bottom padding. Decorative (`aria-hidden`).
-- Tile radius 22%. Each tile is a two-faced 3D card (perspective 500px, `preserve-3d`, hidden backfaces).
-- **Cream tile**: radial gradient `#F7F2E8 → #ECE5D8 → #DCD3C2` from 25% 15%. Inset top highlight, stacked 1 to 4px bottom shadows `#D9CFBD → #C6BBA6`, drop `0 10px 14px rgba(60,45,25,.16)`.
-- **Black tile**: radial gradient `#36332F → #252321 → #1A1918`. Inset highlight at 8% white, stacked shadows `#171615 → #0B0B0A`, drop `0 10px 14px rgba(0,0,0,.24)`.
-- **Grain**: fractal noise SVG filter (`baseFrequency .9`, 3 octaves) on every face. Multiply at 60% on cream, screen at 35% on black.
-- Resting state: black tiles spell a **K** (cells r-c: 0-0, 1-0, 2-0, 3-0, 4-0, 2-1, 1-2, 0-3, 3-2, 4-3). The rest are cream.
+### Pressed K mark
+- One matte black tile with a K pressed into the face, rendered in 3D with three.js (`vendor/three.min.js`). 300 × 300 canvas, decorative (`aria-hidden`).
+- **Shape**: rounded square (corner radius about 23%), extruded with a soft 8-step bevel, about one fifth as thick as it is wide.
+- **Face**: `#2B2927` clay with the K in `#1C1B1A`, Playfair Display 700. A bump map sinks the K into the surface. Fine grain across face and sides. Roughness 0.9, no metalness.
+- **Both sides** carry the K, and it reads correctly from the back.
+- **Light**: warm key from top left front, cool soft fill from the right, warm rim from behind, warm hemisphere ambient.
+- **Shadow**: blurred ellipse under the tile, `rgba(48,36,22,0.24)`, 11px blur. Shrinks and fades as the tile rises.
+- **Fallback**: no WebGL shows the flat CSS pressed tile (168px, same colours and grain).
 
 ### Wordmark
 - `KYURATE`: Playfair Display 700, 44px, tracking 0.04em, line height 1.
@@ -48,8 +49,8 @@ Autocomplete: `username` on email, `current-password` on password.
 ## States
 
 **Idle**
-- Tiles flip to the next pattern every 2.6s, looping through 4 patterns: K, inverted K, centre tile only, inverted centre.
-- Hover a tile: it tilts toward the cursor (up to ±15° on both axes) and lifts 6px in Z. Click a tile to advance the pattern.
+- The mark turns slowly on its vertical axis (about one turn every 14s) and floats up and down on a 6s cycle.
+- Drag it left or right to spin it. It keeps the momentum, then eases back to the slow turn.
 - Demo button fills `admin@kyurate.demo` / `demo-kyurate`.
 - Enter in either field signs in.
 
@@ -57,10 +58,10 @@ Autocomplete: `username` on email, `current-password` on password.
 - 3px ink bar sweeps across the top edge of the card (scaleX 0 → 1, 2.1s).
 - Button text becomes three 5px white dots bouncing 3px, 0.15s apart.
 - Inputs and buttons disabled.
-- Tile cycle speeds up to every 0.7s.
+- The mark spins up fast.
 
 **Done**
-- Tiles settle back to the K. On the centre-tile patterns the middle tile lifts 16px in Z.
+- The mark eases to a stop facing front, still floating.
 - Form swaps for a centred column, 18px gap, 24px vertical padding:
   - 56px ink circle with a white check drawn in (stroke 3, 0.6s).
   - `Welcome back`, Playfair 400, 32px.
@@ -71,24 +72,23 @@ Autocomplete: `username` on email, `current-password` on password.
 
 | What | Animation |
 |---|---|
-| Tiles in | Drop 18px + scale .85 → 1, 0.6s, `cubic-bezier(.3,1.35,.5,1)`, delay `(row + col) × 0.05s` (diagonal wave) |
-| Tile flip | 180° rotateY per change, 0.8s overshoot ease, delay `(row + col) × 0.06s` |
-| Tile tilt | 0.15s ease-out while hovering |
+| Mark in | Drop 14px + scale .92 → 1, 0.9s, `cubic-bezier(.3,1.35,.5,1)` |
+| Mark idle | Slow turn + 6s float, tilted back slightly |
 | Wordmark | Each letter rises 18px from 6px blur, 0.7s, starting 0.55s, 0.06s apart |
 | `AI STUDIO` | Rise 16px, 1.05s delay |
 | Card | Rise 16px, 0.3s delay |
 | Buttons | Hover lift 1px, press scale .97 (0.08s) |
 | Input focus | Ink border, `0 0 0 4px rgba(26,26,26,.08)` ring, solid white fill, 0.2s |
 
-`prefers-reduced-motion`: every animation and transition off. Tiles still show the K.
+`prefers-reduced-motion`: CSS animation and transitions off. The mark holds still at a slight angle and only moves when dragged or signing in.
 
 ## Accessibility
 
 - `:focus-visible` 2px ink outline, 3px offset.
 - Wordmark has `aria-label="KYURATE"` so the split letters read as one word.
-- Grid, grain and pattern SVGs are `aria-hidden`.
+- The mark, grain and pattern SVGs are `aria-hidden`.
 - Real `<label>` wraps each input.
 
 ## Colour used
 
-`#1A1A1A` ink · `#5A5A5A` secondary · `#F3F1EC` paper · `#FFFFFF` · cream tile `#F7F2E8 / #ECE5D8 / #DCD3C2` · black tile `#36332F / #252321 / #1A1918`
+`#1A1A1A` ink · `#5A5A5A` secondary · `#F3F1EC` paper · `#FFFFFF` · mark face `#2B2927` · pressed K `#1C1B1A` · mark sides `#252322`
