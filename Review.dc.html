@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shot QA and review · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kyPulse{0%,100%{opacity:1}50%{opacity:.45}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .05s cubic-bezier(.2,.7,.2,1) both}
+section{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+section+section{animation-delay:.2s}
+[aria-label="Shot timeline"] span[style*="#B39050"]{animation:kyPulse 1.4s ease-in-out infinite}
+a,button,label{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-1px)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+.ky-playbtn:hover{transform:scale(1.06)!important;opacity:1!important}
+@keyframes kyHead{from{left:0}to{left:calc(100% - 3px)}}
+.ky-head{animation:kyHead 15s linear infinite}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 1320px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 32px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<a href="Lock.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">LOCK</a>
+<a href="Setup.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">SETUP</a>
+<a href="Preview.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">PREVIEW</a>
+<a href="Generate.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">GENERATE</a>
+<span style="padding: 7px 12px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">REVIEW</span>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<section style="flex: 0 1 380px; min-width: 280px; display: flex; flex-direction: column; gap: 12px; margin-top: 70px">
+<div style="position: relative; aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; box-shadow: 0 14px 40px rgba(26,26,26,0.18)">
+<img src="assets/d7.jpg" alt="Video frame" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" class="ky-playbtn" onClick="{{togglePlay}}" aria-label="{{playLabel}}" style="position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 1px solid rgba(255,255,255,0.9); border-radius: 50%; background: rgba(255,255,255,0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: {{playOpacity}}">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="{{playIcon}}" fill="#1A1A1A"></path></svg>
+</button>
+</div>
+<div style="position: relative; display: flex; gap: 2px; height: 8px" aria-label="Shot timeline">
+<sc-if value="{{playing}}" hint-placeholder-val="{{false}}"><span class="ky-head" style="position: absolute; top: -5px; width: 3px; height: 18px; border-radius: 2px; background: #1A1A1A; z-index: 1"></span></sc-if>
+<sc-for list="{{shots}}" as="s" hint-placeholder-count="11">
+<span style="flex: 1; border-radius: 4px; background: {{s.bar}}"></span>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 11px; color: #5A5A5A; font-variant-numeric: tabular-nums"><span>0:00</span><span>0:15</span></div>
+</section>
+<section style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; padding: 0 8px">
+<h1 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">Shot QA</h1>
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">{{summary}}</span>
+</div>
+<div style="padding: 8px 20px; border-radius: 28px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<sc-for list="{{shots}}" as="s" hint-placeholder-count="11">
+<div style="display: flex; align-items: center; gap: 14px; padding: 8px 0; border-top: {{s.line}}; flex-wrap: wrap">
+<span style="font-size: 12px; color: #5A5A5A; width: 20px; font-variant-numeric: tabular-nums">{{s.n}}</span>
+<span style="width: 28px; height: 40px; border-radius: 8px; overflow: hidden; flex: none; background: repeating-linear-gradient(135deg, #E6E2DA 0 5px, #DEDAD1 5px 10px)">
+<sc-if value="{{s.img}}" hint-placeholder-val="{{false}}"><img src="{{s.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"></sc-if>
+</span>
+<span style="flex: 0 0 120px; font-family: 'Playfair Display', serif; font-size: 15px">{{s.label}}</span>
+<span style="flex: 1 1 180px; font-size: 13px; color: {{s.noteColor}}">{{s.note}}</span>
+<span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; padding: 5px 10px; border-radius: 999px; background: {{s.pillBg}}; color: {{s.pillFg}}">{{s.status}}</span>
+<sc-if value="{{s.canRegen}}" hint-placeholder-val="{{false}}">
+<button type="button" onClick="{{s.onRegen}}" style="height: 34px; padding: 0 14px; border: 0; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer">REGENERATE</button>
+</sc-if>
+</div>
+</sc-for>
+</div>
+<div style="padding: 20px 24px; border-radius: 28px; display: flex; flex-direction: column; gap: 14px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 22px">Audio</h2>
+<button type="button" onClick="{{regenFoley}}" disabled="{{foleyBusy}}" style="margin-left: auto; height: 34px; padding: 0 14px; border: 1px solid rgba(26,26,26,0.15); border-radius: 999px; background: rgba(255,255,255,0.6); font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer">{{foleyLabel}}</button>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="flex: 0 0 84px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">FOLEY</span>
+<div style="flex: 1; min-width: 0; display: flex; gap: 2px; opacity: {{foleyOpacity}}; transition: opacity .3s ease">
+<sc-for list="{{foley}}" as="f" hint-placeholder-count="11">
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<div style="height: 34px; border-radius: 8px; background: {{f.bg}}; display: flex; align-items: center; justify-content: center; gap: 2px; padding: 0 3px; overflow: hidden">
+<sc-for list="{{f.bars}}" as="h" hint-placeholder-count="8">
+<span style="width: 2px; flex: none; border-radius: 1px; background: {{f.fg}}; height: {{h.v}}"></span>
+</sc-for>
+</div>
+<span style="font-size: 10px; line-height: 12px; color: #5A5A5A; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{f.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="flex: 0 0 84px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">ROOM TONE</span>
+<div style="flex: 1; height: 14px; border-radius: 7px; background: repeating-linear-gradient(90deg, rgba(26,26,26,0.14) 0 2px, transparent 2px 5px)"></div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="flex: 0 0 84px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">MUSIC</span>
+<div style="flex: 1; height: 24px; border-radius: 12px; background: rgba(26,26,26,0.06); display: flex; align-items: center; padding: 0 12px; font-size: 12px">[TRACK]</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; padding-top: 4px">
+<label style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">FOLEY <input type="range" min="0" max="100" value="80" style="width: 120px; accent-color: #1A1A1A"></label>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">ROOM <input type="range" min="0" max="100" value="30" style="width: 120px; accent-color: #1A1A1A"></label>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">MUSIC <input type="range" min="0" max="100" value="50" style="width: 120px; accent-color: #1A1A1A"></label>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 12px 12px 24px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<span style="font-family: 'Playfair Display', serif; font-size: 18px; margin-right: 6px">Finish</span>
+<span style="font-size: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(26,26,26,0.06)">Grain <b style="font-weight: 600">12</b></span>
+<span style="font-size: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(26,26,26,0.06)">Zoom <b style="font-weight: 600">5%</b></span>
+<span style="font-size: 12px; padding: 6px 12px; border-radius: 999px; background: rgba(31,94,61,0.1); color: #1F5E3D">AI label on</span>
+<span style="margin-left: auto; display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{formats}}" as="f" hint-placeholder-count="3">
+<button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="height: 44px; padding: 0 16px; border: 1px solid {{f.border}}; border-radius: 999px; background: {{f.bg}}; font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #1A1A1A; cursor: pointer">{{f.label}}</button>
+</sc-for>
+<sc-if value="{{notAllPass}}" hint-placeholder-val="{{true}}"><button type="button" disabled style="height: 44px; padding: 0 22px; border: 0; border-radius: 999px; background: #8A8A8A; color: #FFFFFF; font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">EXPORT</button></sc-if>
+<sc-if value="{{allPass}}" hint-placeholder-val="{{false}}"><a href="Export.dc.html" style="height: 44px; padding: 0 22px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; display: flex; align-items: center">EXPORT</a></sc-if>
+</span>
+</div>
+</section>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { phase: 'idle', playing: false, foleyBusy: false, fmt: 'TIKTOK' };
+}
+componentWillUnmount() {
+clearTimeout(this.t);
+clearTimeout(this.ft);
+}
+renderVals() {
+const phase = this.state.phase;
+const regen = () => { this.setState({ phase: 'working' }); clearTimeout(this.t); this.t = setTimeout(() => this.setState({ phase: 'done' }), 1800); };
+const k4 = phase === 'done' ? 'pass' : 'regen';
+const k8 = phase === 'done' ? 'pass' : phase === 'working' ? 'regen' : 'fail';
+const st = {
+pass: { status: 'PASS', pillBg: 'rgba(31,94,61,0.1)', pillFg: '#1F5E3D', bar: '#1A1A1A', noteColor: '#5A5A5A', canRegen: false },
+regen: { status: 'REGENERATING', pillBg: 'rgba(122,82,0,0.1)', pillFg: '#7A5200', bar: '#B39050', noteColor: '#7A5200', canRegen: false },
+fail: { status: 'FAIL', pillBg: 'rgba(163,52,26,0.1)', pillFg: '#A3341A', bar: '#A3341A', noteColor: '#A3341A', canRegen: true }
+};
+const s = (n, label, kind, note, img) => ({ n, label, note: note || 'Matches lock', img: img || '', line: n === '01' ? '0' : '1px solid rgba(26,26,26,0.08)', onRegen: regen, ...st[kind] });
+const wave = (seed, amp) => Array.from({ length: 8 }, (_, i) => ({ v: Math.max(3, Math.round(amp * (0.35 + 0.65 * Math.abs(Math.sin(seed * 1.7 + i * 1.3))))) + 'px' }));
+const fx = (label, seed, amp, bad) => ({ label, bars: wave(seed, amp), bg: bad ? 'rgba(163,52,26,0.1)' : 'rgba(26,26,26,0.05)', fg: bad ? '#A3341A' : '#1A1A1A' });
+const { playing, foleyBusy, fmt } = this.state;
+return {
+playing,
+playLabel: playing ? 'Pause' : 'Play',
+playIcon: playing ? 'M7 5h3v14H7zM14 5h3v14h-3z' : 'M7 4l13 8-13 8z',
+playOpacity: playing ? 0.25 : 1,
+togglePlay: () => this.setState({ playing: !playing }),
+foleyBusy,
+foleyLabel: foleyBusy ? 'GENERATING…' : 'REGENERATE FOLEY',
+foleyOpacity: foleyBusy ? 0.35 : 1,
+regenFoley: () => { this.setState({ foleyBusy: true }); clearTimeout(this.ft); this.ft = setTimeout(() => this.setState({ foleyBusy: false }), 1500); },
+formats: ['TIKTOK', 'REELS', 'MP4'].map((label) => ({ label, pressed: fmt === label ? 'true' : 'false', bg: fmt === label ? '#FFFFFF' : 'rgba(255,255,255,0.4)', border: fmt === label ? '#1A1A1A' : 'rgba(26,26,26,0.15)', pick: () => this.setState({ fmt: label }) })),
+summary: phase === 'done' ? '11 PASS · READY TO EXPORT' : phase === 'working' ? '9 PASS · 2 REGENERATING' : '9 PASS · 1 REGENERATING · 1 FAIL',
+allPass: phase === 'done',
+notAllPass: phase !== 'done',
+foley: [
+fx('weight shift', 1, 10), fx('sheet rustle', 2, 14), fx('lift, swish', 3, 24), fx('button taps', 4, 12),
+fx('satin rub', 5, 18), fx('strap snap', 6, 16), fx('turn swish', 7, 20), fx('turn swish', 8, 20, phase !== 'done'),
+fx('palm slide', 9, 14), fx('skirt drop', 10, 26), fx('weight shift', 11, 10)
+],
+shots: [
+s('01', 'Try-on hook', 'pass'),
+s('02', 'Flat lay', 'pass', '', 'assets/d1.jpg'),
+s('03', 'Hold-up', 'pass', '', 'assets/d3.jpg'),
+s('04', 'Buttons', k4, k4 === 'pass' ? '' : 'Buttons 12, lock says 14','assets/d6.jpg'),
+s('05', 'Fabric rub', 'pass', '', 'assets/d4.jpg'),
+s('06', 'Try-on front', 'pass'),
+s('07', 'Side profile', 'pass'),
+s('08', 'Back view', k8, k8 === 'pass' ? '' : 'Strap width changed'),
+s('09', 'Smoothing', 'pass'),
+s('10', 'Skirt drape', 'pass'),
+s('11', 'Final pose', 'pass', '', 'assets/d8.jpg')
+]
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Garment lock · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kyPin{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:none}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .05s cubic-bezier(.2,.7,.2,1) both}
+section,aside,figure,article{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+section:first-child [style*="position: absolute"]{animation:kyPin .45s .6s cubic-bezier(.3,1.4,.5,1) both}
+a,button,label{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-1px)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 960px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 32px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<span style="padding: 7px 12px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">LOCK</span>
+<a href="Setup.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">SETUP</a>
+<a href="Preview.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">PREVIEW</a>
+<a href="Generate.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">GENERATE</a>
+<a href="Review.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">REVIEW</a>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+<section style="flex: 0 1 380px; min-width: 280px">
+<div style="position: relative; aspect-ratio: 9 / 16; border-radius: 28px; overflow: hidden; box-shadow: 0 10px 30px rgba(26,26,26,0.12)">
+<img src="assets/d2.jpg" alt="Dress laid flat with spec points marked" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<span style="position: absolute; left: 41%; top: 16%; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #1A1A1A; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">1</span>
+<span style="position: absolute; left: 50%; top: 27%; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #1A1A1A; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">2</span>
+<span style="position: absolute; left: 60%; top: 46%; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #1A1A1A; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">3</span>
+<span style="position: absolute; left: 36%; top: 60%; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #1A1A1A; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">4</span>
+<span style="position: absolute; left: 52%; top: 78%; width: 26px; height: 26px; border-radius: 50%; background: rgba(255,255,255,0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); color: #1A1A1A; font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.2)">5</span>
+</div>
+</section>
+<section style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<h1 style="margin: 0 0 0 8px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">Garment lock</h1>
+<div style="opacity: {{panelOpacity}}; transition: opacity .3s ease; padding: 8px 24px; border-radius: 28px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="8">
+<div style="display: flex; align-items: center; gap: 16px; padding: 12px 0; border-top: {{r.line}}; flex-wrap: wrap">
+<span style="flex: none; width: 24px; height: 24px; border-radius: 50%; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; background: {{r.pinBg}}; color: {{r.pinFg}}">{{r.pin}}</span>
+<span style="flex: 0 0 110px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #5A5A5A">{{r.k}}</span>
+<sc-if value="{{r.viewing}}" hint-placeholder-val="{{true}}"><span style="flex: 1 1 200px; font-size: 15px">{{r.v}}</span></sc-if>
+<sc-if value="{{r.editing}}" hint-placeholder-val="{{false}}"><input aria-label="{{r.k}}" value="{{r.v}}" onInput="{{r.onInput}}" style="flex: 1 1 200px; min-width: 0; height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #1A1A1A; background: #FFFFFF; font: inherit; font-size: 15px; color: #1A1A1A"></sc-if>
+<sc-if value="{{r.swatch}}" hint-placeholder-val="{{false}}">
+<span style="width: 18px; height: 18px; border-radius: 50%; background: #141414; border: 1px solid rgba(255,255,255,0.9); box-shadow: 0 0 0 1px rgba(26,26,26,0.15)"></span>
+</sc-if>
+<button type="button" onClick="{{r.onEdit}}" aria-label="{{r.btnLabel}}" style="width: 44px; height: 36px; border: 1px solid rgba(26,26,26,0.12); border-radius: 999px; background: {{r.btnBg}}; color: {{r.btnFg}}; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{r.icon}}"></path></svg>
+</button>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap">
+<a href="Setup.dc.html" style="height: 48px; padding: 0 28px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; display: flex; align-items: center">CONFIRM LOCK</a>
+<button type="button" onClick="{{rescan}}" disabled="{{scanning}}" style="height: 48px; padding: 0 24px; border: 1px solid rgba(26,26,26,0.15); border-radius: 999px; background: rgba(255,255,255,0.55); color: #1A1A1A; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer">{{scanLabel}}</button>
+</div>
+</section>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = {
+editing: -1,
+scanning: false,
+vals: ['Dress, slip, midi', 'Spaghetti, thin, adjustable', 'V, cowl drape at bust', '14, covered, diagonal front', 'Black', 'Satin, soft sheen, medium weight', 'Midi, below knee', 'Not scanned yet']
+};
+}
+componentWillUnmount() {
+clearTimeout(this.t);
+}
+renderVals() {
+const { editing, scanning, vals } = this.state;
+const PEN = 'M4 20h4L19 9l-4-4L4 16z', CHECK = 'M5 12l5 5 9-10';
+const defs = [['', 'Category'], ['1', 'Straps'], ['2', 'Neckline'], ['3', 'Buttons'], ['4', 'Color', true], ['4', 'Fabric'], ['5', 'Length'], ['', 'Back']];
+const rows = defs.map(([pin, k, swatch], i) => {
+const on = editing === i;
+return {
+pin, k, v: vals[i], swatch: !!swatch,
+line: i === 0 ? '0' : '1px solid rgba(26,26,26,0.08)',
+pinBg: pin ? '#1A1A1A' : 'rgba(26,26,26,0.06)', pinFg: pin ? '#FFFFFF' : '#8A8A8A',
+editing: on, viewing: !on,
+icon: on ? CHECK : PEN,
+btnLabel: on ? 'Save ' + k : 'Edit ' + k,
+btnBg: on ? '#1A1A1A' : 'rgba(255,255,255,0.6)', btnFg: on ? '#FFFFFF' : '#1A1A1A',
+onEdit: () => this.setState({ editing: on ? -1 : i }),
+onInput: (e) => { const next = this.state.vals.slice(); next[i] = e.target.value; this.setState({ vals: next }); }
+};
+});
+return {
+rows,
+scanning,
+panelOpacity: scanning ? 0.4 : 1,
+scanLabel: scanning ? 'SCANNING…' : 'RE-SCAN',
+rescan: () => {
+this.setState({ scanning: true, editing: -1 });
+clearTimeout(this.t);
+this.t = setTimeout(() => { const next = this.state.vals.slice(); next[7] = 'Matches front, no back details'; this.setState({ scanning: false, vals: next }); }, 1400);
+}
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>

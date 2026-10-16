@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Keyframe preview · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .05s cubic-bezier(.2,.7,.2,1) both}
+section{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+figure{animation:kyUp .5s .3s cubic-bezier(.2,.7,.2,1) both}
+figure+figure{animation-delay:.38s}
+figure+figure+figure{animation-delay:.46s}
+figure+figure+figure+figure{animation-delay:.54s}
+a,button,label{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-1px)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+figure:hover img{transform:scale(1.05)}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 1000px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 28px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<a href="Lock.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">LOCK</a>
+<a href="Setup.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">SETUP</a>
+<span style="padding: 7px 12px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">PREVIEW</span>
+<a href="Generate.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">GENERATE</a>
+<a href="Review.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">REVIEW</a>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<h1 style="margin: 0 0 0 8px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">Keyframe preview</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<sc-for list="{{clips}}" as="g" hint-placeholder-count="3">
+<section style="flex: {{g.flex}}; min-width: 280px; display: flex; flex-direction: column; gap: 14px; padding: 18px; border-radius: 28px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 0 4px"><h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 20px">{{g.name}}</h2><span style="font-size: 12px; color: #5A5A5A; font-variant-numeric: tabular-nums">{{g.time}}</span></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(108px, 1fr)); gap: 10px">
+<sc-for list="{{g.shots}}" as="s" hint-placeholder-count="4">
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 6px">
+<button type="button" onClick="{{s.toggle}}" aria-label="{{s.btnLabel}}" style="display: block; width: 100%; padding: 0; border: 0; background: none; border-radius: 16px; cursor: pointer">
+<div style="position: relative; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #E6E2DA; box-shadow: {{s.ring}}; transition: box-shadow .25s ease">
+<sc-if value="{{s.img}}" hint-placeholder-val="{{true}}">
+<img src="{{s.img}}" alt="Shot {{s.n}} keyframe" style="width: 100%; height: 100%; object-fit: cover; display: block">
+</sc-if>
+<sc-if value="{{s.noImg}}" hint-placeholder-val="{{false}}">
+<div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 10px; letter-spacing: 0.08em; color: #8A8A8A; text-align: center; padding: 8px; box-sizing: border-box; background: repeating-linear-gradient(135deg, #E6E2DA 0 8px, #DEDAD1 8px 16px)">[TRY-ON STILL]</div>
+</sc-if>
+<span style="position: absolute; left: 6px; top: 6px; font-size: 10px; font-weight: 600; padding: 3px 7px; border-radius: 999px; background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-variant-numeric: tabular-nums">{{s.n}}</span>
+<span style="position: absolute; right: 6px; top: 6px; width: 22px; height: 22px; border-radius: 50%; background: {{s.dot}}; display: flex; align-items: center; justify-content: center">
+<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{s.icon}}"></path></svg>
+</span>
+</div>
+</button>
+<figcaption style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: {{s.capColor}}">{{s.label}}</figcaption>
+</figure>
+</sc-for>
+</div>
+</section>
+</sc-for>
+</div>
+<div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 12px 12px 12px 24px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<span style="font-size: 14px; font-variant-numeric: tabular-nums"><b style="font-weight: 600">{{approved}}</b> of 11 approved</span>
+<span style="font-size: 13px; color: {{issueColor}}">{{issue}}</span>
+<button type="button" onClick="{{redo}}" disabled="{{redoDisabled}}" style="margin-left: auto; height: 44px; padding: 0 20px; border: 1px solid rgba(26,26,26,0.15); border-radius: 999px; background: rgba(255,255,255,0.6); font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer; opacity: {{redoOpacity}}">{{redoLabel}}</button>
+<a href="Generate.dc.html" style="height: 44px; padding: 0 24px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; display: flex; align-items: center">GENERATE VIDEO</a>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { bad: ['04'], redoing: false };
+}
+componentWillUnmount() {
+clearTimeout(this.t);
+}
+renderVals() {
+const { bad: badList, redoing } = this.state;
+const OK = 'M5 12l5 5 9-10', X = 'M7 7l10 10M17 7L7 17';
+const toggle = (n) => () => {
+const cur = this.state.bad;
+this.setState({ bad: cur.indexOf(n) >= 0 ? cur.filter((x) => x !== n) : cur.concat([n]).sort() });
+};
+const s = (n, label, img) => {
+const bad = badList.indexOf(n) >= 0;
+return { n, label, img: img || '', noImg: !img, dot: bad ? '#A3341A' : '#1A1A1A', icon: bad ? X : OK, ring: bad ? '0 0 0 2px #A3341A' : '0 6px 18px rgba(26,26,26,0.1)', capColor: bad ? '#A3341A' : '#1A1A1A', toggle: toggle(n), btnLabel: (bad ? 'Approve shot ' : 'Flag shot ') + n };
+};
+const issue = redoing ? 'Redoing ' + badList.join(', ') + '…' : badList.length === 0 ? 'All keyframes approved' : badList.length === 1 && badList[0] === '04' ? 'Shot 04: button row runs the wrong way' : 'Flagged: ' + badList.join(', ');
+return {
+approved: String(11 - badList.length),
+issue,
+issueColor: badList.length === 0 ? '#1F5E3D' : '#A3341A',
+redoLabel: redoing ? 'REDOING…' : 'REDO FLAGGED',
+redoDisabled: redoing || badList.length === 0,
+redoOpacity: badList.length === 0 ? 0.4 : 1,
+redo: () => {
+this.setState({ redoing: true });
+clearTimeout(this.t);
+this.t = setTimeout(() => this.setState({ redoing: false, bad: [] }), 1500);
+},
+clips: [
+{ name: 'Clip A', time: '0.0 to 5.1s', flex: '4 1 0', shots: [
+s('01', 'Try-on hook'),
+s('02', 'Flat lay', 'assets/d1.jpg'),
+s('03', 'Hold-up', 'assets/d3.jpg'),
+s('04', 'Buttons', 'assets/d6.jpg')
+] },
+{ name: 'Clip B', time: '5.1 to 10.2s', flex: '4 1 0', shots: [
+s('05', 'Fabric rub', 'assets/d4.jpg'),
+s('06', 'Try-on front'),
+s('07', 'Side profile'),
+s('08', 'Back view')
+] },
+{ name: 'Clip C', time: '10.2 to 15.0s', flex: '3 1 0', shots: [
+s('09', 'Smoothing'),
+s('10', 'Skirt drape'),
+s('11', 'Final pose')
+] }
+]
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>

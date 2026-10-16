@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exported · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kyDraw{from{stroke-dashoffset:60}to{stroke-dashoffset:0}}
+@keyframes kyPop{0%{transform:scale(.6);opacity:0}70%{transform:scale(1.06);opacity:1}100%{transform:none}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .25s cubic-bezier(.2,.7,.2,1) both}
+section{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+section+section{animation-delay:.22s}
+.ky-pop{animation:kyPop .6s .1s cubic-bezier(.2,.7,.2,1) both}
+.ky-check{stroke-dasharray:60;animation:kyDraw .6s .45s ease-out both}
+a,button{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-1px)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+.ky-playbtn:hover{transform:scale(1.06)!important;opacity:1!important}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 960px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 32px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<a href="Lock.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">LOCK</a>
+<a href="Setup.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">SETUP</a>
+<a href="Preview.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">PREVIEW</a>
+<a href="Generate.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">GENERATE</a>
+<a href="Review.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">REVIEW</a>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center; justify-content: center; padding-top: 8px">
+<section style="flex: 0 1 360px; min-width: 260px">
+<div style="position: relative; aspect-ratio: 9 / 16; border-radius: 32px; overflow: hidden; box-shadow: 0 24px 60px rgba(26,26,26,0.22)">
+<img src="assets/d8.jpg" alt="Final video" style="width: 100%; height: 100%; object-fit: cover; display: block">
+<button type="button" class="ky-playbtn" onClick="{{togglePlay}}" aria-label="{{playLabel}}" style="position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border: 1px solid rgba(255,255,255,0.9); border-radius: 50%; background: rgba(255,255,255,0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: {{playOpacity}}">
+<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="{{playIcon}}" fill="#1A1A1A"></path></svg>
+</button>
+<span style="position: absolute; left: 12px; bottom: 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)">AI-GENERATED</span>
+</div>
+</section>
+<section style="flex: 0 1 440px; min-width: 300px; padding: 32px; border-radius: 32px; display: flex; flex-direction: column; gap: 22px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.9); box-shadow: inset 0 1px 0 #FFFFFF, 0 24px 60px rgba(26,26,26,0.08)">
+<svg class="ky-pop" width="52" height="52" viewBox="0 0 56 56" fill="none" aria-hidden="true"><circle cx="28" cy="28" r="27" fill="#1A1A1A"></circle><path class="ky-check" d="M17 29l7 7 15-16" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<h1 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">Exported</h1>
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px">
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">FORMAT</dt><dd style="margin: 0; text-align: right">TikTok 9:16, 1080 × 1920</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">LENGTH</dt><dd style="margin: 0; text-align: right; font-variant-numeric: tabular-nums">0:15</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">AUDIO</dt><dd style="margin: 0; text-align: right">Foley + [TRACK]</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">AI LABEL</dt><dd style="margin: 0; text-align: right; color: #1F5E3D">Embedded</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">CREDITS</dt><dd style="margin: 0; text-align: right; font-variant-numeric: tabular-nums">214</dd>
+</dl>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<button type="button" onClick="{{download}}" style="height: 50px; border: 0; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer">{{dlLabel}}</button>
+<button type="button" onClick="{{post}}" disabled="{{postBusy}}" style="height: 50px; border: 1px solid {{postBorder}}; border-radius: 999px; background: {{postBg}}; color: {{postFg}}; font: inherit; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer">{{postLabel}}</button>
+</div>
+<div style="display: flex; gap: 20px; justify-content: center; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">
+<a href="HomeMix.dc.html" style="text-decoration: none">BACK TO HOME</a>
+<a href="Upload.dc.html" style="text-decoration: none">NEW VIDEO</a>
+</div>
+</section>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { playing: false, saved: false, post: 'idle' };
+}
+componentWillUnmount() {
+clearTimeout(this.t);
+}
+renderVals() {
+const { playing, saved, post } = this.state;
+return {
+playLabel: playing ? 'Pause' : 'Play',
+playIcon: playing ? 'M7 5h3v14H7zM14 5h3v14h-3z' : 'M7 4l13 8-13 8z',
+playOpacity: playing ? 0.25 : 1,
+togglePlay: () => this.setState({ playing: !playing }),
+dlLabel: saved ? 'SAVED ✓' : 'DOWNLOAD MP4',
+download: () => this.setState({ saved: true }),
+postBusy: post === 'posting',
+postLabel: post === 'posting' ? 'POSTING…' : post === 'done' ? 'POSTED ✓' : 'POST TO TIKTOK',
+postBg: post === 'done' ? 'rgba(31,94,61,0.1)' : 'rgba(255,255,255,0.6)',
+postFg: post === 'done' ? '#1F5E3D' : '#1A1A1A',
+postBorder: post === 'done' ? 'rgba(31,94,61,0.3)' : 'rgba(26,26,26,0.15)',
+post: () => {
+if (post !== 'idle') return;
+this.setState({ post: 'posting' });
+clearTimeout(this.t);
+this.t = setTimeout(() => this.setState({ post: 'done' }), 1400);
+}
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>

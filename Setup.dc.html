@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .05s cubic-bezier(.2,.7,.2,1) both}
+section,aside,figure,article{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+section+section{animation-delay:.2s}
+section+section+section{animation-delay:.28s}
+aside{animation-delay:.24s}
+a,button,label{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,border-color .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(26,26,26,.08)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+img{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+a:hover img,button:hover img{transform:scale(1.04)}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 1180px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 32px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<a href="Lock.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">LOCK</a>
+<span style="padding: 7px 12px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">SETUP</span>
+<a href="Preview.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">PREVIEW</a>
+<a href="Generate.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">GENERATE</a>
+<a href="Review.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">REVIEW</a>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<div style="flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h1 style="margin: 0 0 0 8px; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">Setup</h1>
+<section style="padding: 24px; border-radius: 28px; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px">Look</h2>
+<button type="button" onClick="{{cycleLight}}" style="margin-left: auto; height: 36px; padding: 0 14px; border: 1px solid rgba(26,26,26,0.12); border-radius: 999px; background: rgba(255,255,255,0.6); font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; cursor: pointer">LIGHTING: {{light}}</button>
+<button type="button" onClick="{{cycleRoom}}" style="height: 36px; padding: 0 14px; border: 1px solid rgba(26,26,26,0.12); border-radius: 999px; background: rgba(255,255,255,0.6); font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; cursor: pointer">ROOM: {{room}}</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px">
+<button type="button" onClick="{{look0}}" style="padding: 0; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.6); border: {{lb0}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column">
+<svg viewBox="0 0 220 160" role="img" aria-label="Bedroom: window left, bed right, phone on a shelf facing the model, second phone overhead above the bed" style="display: block; width: 100%; height: auto">
+<polygon points="24,57 110,14 110,70 24,113" fill="#F2F1EE" stroke="#D9D4CA"></polygon>
+<polygon points="110,14 196,57 196,113 110,70" fill="#E8E6E1" stroke="#D9D4CA"></polygon>
+<polygon points="110,70 196,113 110,156 24,113" fill="#E4DCCD" stroke="#D3CBBB"></polygon>
+<polygon points="49.8,82.1 75.6,69.2 75.6,43.2 49.8,56.1" fill="#DCE5EE" stroke="#BCC6D0"></polygon>
+<polygon points="127.2,98.7 161.6,115.9 161.6,125.9 127.2,108.7" fill="#E2DED6"></polygon>
+<polygon points="187.4,103 161.6,115.9 161.6,125.9 187.4,113" fill="#D6D1C7"></polygon>
+<polygon points="153,85.8 187.4,103 161.6,115.9 127.2,98.7" fill="#FFFFFF" stroke="#D9D4CA"></polygon>
+<line x1="157" y1="70" x2="157" y2="98" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="3 3"></line>
+<rect x="152" y="64" width="10" height="6" rx="1.5" fill="#1A1A1A"></rect>
+<polygon points="127,118 109,90 121,88" fill="#1A1A1A" fill-opacity="0.1" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 2"></polygon>
+<circle cx="114.5" cy="79" r="4" fill="#8A857C"></circle>
+<rect x="110" y="84" width="9" height="22" rx="4.5" fill="#8A857C"></rect>
+<line x1="127" y1="125" x2="127" y2="139" stroke="#1A1A1A" stroke-width="1.5"></line>
+<rect x="123" y="113" width="8" height="12" rx="1.5" fill="#1A1A1A"></rect>
+</svg>
+<span style="padding: 12px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">BEDROOM HAUL</span>
+</button>
+<button type="button" onClick="{{look1}}" style="padding: 0; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.6); border: {{lb1}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column">
+<svg viewBox="0 0 220 160" role="img" aria-label="White studio: softbox front left, phone on a tripod facing the model" style="display: block; width: 100%; height: auto">
+<polygon points="24,57 110,14 110,70 24,113" fill="#FFFFFF" stroke="#E2DED6"></polygon>
+<polygon points="110,14 196,57 196,113 110,70" fill="#F5F5F3" stroke="#E2DED6"></polygon>
+<polygon points="110,70 196,113 110,156 24,113" fill="#F8F8F6" stroke="#E2DED6"></polygon>
+<line x1="58" y1="80" x2="58" y2="109" stroke="#8A857C" stroke-width="1.2"></line>
+<rect x="49" y="68" width="18" height="13" rx="1.5" fill="#FFFFFF" stroke="#BDB8AE"></rect>
+<polygon points="127,118 109,90 121,88" fill="#1A1A1A" fill-opacity="0.1" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 2"></polygon>
+<circle cx="114.5" cy="79" r="4" fill="#8A857C"></circle>
+<rect x="110" y="84" width="9" height="22" rx="4.5" fill="#8A857C"></rect>
+<line x1="127" y1="125" x2="127" y2="139" stroke="#1A1A1A" stroke-width="1.5"></line>
+<line x1="127" y1="139" x2="121" y2="148" stroke="#1A1A1A" stroke-width="1.2"></line>
+<line x1="127" y1="139" x2="133" y2="148" stroke="#1A1A1A" stroke-width="1.2"></line>
+<rect x="123" y="113" width="8" height="12" rx="1.5" fill="#1A1A1A"></rect>
+</svg>
+<span style="padding: 12px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">STUDIO WHITE</span>
+</button>
+<button type="button" onClick="{{look2}}" style="padding: 0; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.6); border: {{lb2}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column">
+<svg viewBox="0 0 220 160" role="img" aria-label="Closet: mirror on the right wall, model holds the phone and films the reflection" style="display: block; width: 100%; height: auto">
+<polygon points="24,57 110,14 110,70 24,113" fill="#EDE7DC" stroke="#D9D0C1"></polygon>
+<polygon points="110,14 196,57 196,113 110,70" fill="#E3DCCF" stroke="#D9D0C1"></polygon>
+<polygon points="110,70 196,113 110,156 24,113" fill="#B89B7A" stroke="#A3876A"></polygon>
+<polygon points="49.8,82.1 75.6,69.2 75.6,43.2 49.8,56.1" fill="#DCE5EE" stroke="#BCC6D0"></polygon>
+<polygon points="140.1,77.05 161.6,87.8 161.6,41.8 140.1,31.05" fill="#CBD5DC" stroke="#9AA6AF"></polygon>
+<polygon points="125,90 140.1,60 161.6,70" fill="#1A1A1A" fill-opacity="0.1" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 2"></polygon>
+<circle cx="122.9" cy="79" r="4" fill="#8A857C"></circle>
+<rect x="118.4" y="84" width="9" height="22" rx="4.5" fill="#8A857C"></rect>
+<rect x="123" y="86" width="6" height="9" rx="1.2" fill="#1A1A1A"></rect>
+</svg>
+<span style="padding: 12px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">CLOSET MIRROR</span>
+</button>
+<button type="button" onClick="{{look3}}" style="padding: 0; border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.6); border: {{lb3}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column">
+<svg viewBox="0 0 220 160" role="img" aria-label="Warm apartment: sun patch on the floor from the left window, handheld phone in front of the model" style="display: block; width: 100%; height: auto">
+<polygon points="24,57 110,14 110,70 24,113" fill="#EADFCF" stroke="#D6C7B0"></polygon>
+<polygon points="110,14 196,57 196,113 110,70" fill="#E0D3BF" stroke="#D6C7B0"></polygon>
+<polygon points="110,70 196,113 110,156 24,113" fill="#9C7A57" stroke="#86684A"></polygon>
+<polygon points="49.8,82.1 75.6,69.2 75.6,43.2 49.8,56.1" fill="#F6E3BE" stroke="#D9BE8C"></polygon>
+<polygon points="79.9,102.25 105.7,115.15 79.9,128.05 54.1,115.15" fill="#F7C66B" fill-opacity="0.55"></polygon>
+<polygon points="140,116 109,90 121,88" fill="#1A1A1A" fill-opacity="0.1" stroke="#1A1A1A" stroke-width="0.8" stroke-dasharray="2 2"></polygon>
+<circle cx="114.5" cy="79" r="4" fill="#8A857C"></circle>
+<rect x="110" y="84" width="9" height="22" rx="4.5" fill="#8A857C"></rect>
+<rect x="136" y="111" width="8" height="12" rx="1.5" fill="#1A1A1A"></rect>
+</svg>
+<span style="padding: 12px 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em">WARM APARTMENT</span>
+</button>
+</div>
+</section>
+<section style="padding: 24px; border-radius: 28px; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px">Model</h2>
+<label style="margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; cursor: pointer"><input type="checkbox" checked style="width: 18px; height: 18px; accent-color: #1A1A1A"> FACE HIDDEN</label>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px">
+<button type="button" onClick="{{model0}}" style="padding: 0; border: {{mb0}}; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer"><img src="assets/m1.jpg" alt="Model A" style="width: 100%; height: 100%; object-fit: cover; display: block"></button>
+<button type="button" onClick="{{model1}}" style="padding: 0; border: {{mb1}}; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer"><img src="assets/m2.jpg" alt="Model B" style="width: 100%; height: 100%; object-fit: cover; display: block"></button>
+<sc-if value="{{hasModelC}}" hint-placeholder-val="{{false}}"><button type="button" onClick="{{model2}}" style="width: 100%; padding: 0; border: {{mb2}}; border-radius: 20px; overflow: hidden; aspect-ratio: 3 / 4; cursor: pointer; background: repeating-linear-gradient(135deg, #E6E2DA 0 8px, #DEDAD1 8px 16px); font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">[MODEL C]</button></sc-if>
+<sc-if value="{{noModelC}}" hint-placeholder-val="{{true}}"><button type="button" onClick="{{addModel}}" style="width: 100%; border: 1.5px dashed rgba(26,26,26,0.25); border-radius: 20px; background: rgba(255,255,255,0.4); aspect-ratio: 3 / 4; font: inherit; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #1A1A1A; cursor: pointer">ADD MODEL</button></sc-if>
+</div>
+</section>
+<section style="padding: 24px; border-radius: 28px; display: flex; flex-direction: column; gap: 16px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 24px">Storyboard</h2>
+<span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #5A5A5A">DRESSES</span>
+<span style="margin-left: auto; display: flex; gap: 14px; font-size: 11px; letter-spacing: 0.06em; color: #5A5A5A">
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #D9D4CA"></span>FLAT LAY</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #8A857C"></span>DETAIL</span>
+<span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 3px; background: #1A1A1A"></span>TRY-ON</span>
+</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{boards}}" as="b" hint-placeholder-count="3">
+<button type="button" onClick="{{b.pick}}" style="padding: 16px; border-radius: 20px; background: rgba(255,255,255,0.6); border: {{b.border}}; font: inherit; text-align: left; cursor: pointer; display: flex; flex-direction: column; gap: 12px">
+<span style="display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap"><span style="font-family: 'Playfair Display', serif; font-size: 17px">{{b.name}}</span><span style="font-size: 12px; color: #5A5A5A">{{b.meta}}</span></span>
+<span style="display: flex; gap: 3px; height: 24px">
+<sc-for list="{{b.shots}}" as="s" hint-placeholder-count="10">
+<span style="flex: {{s.f}}; background: {{s.c}}; border-radius: 4px"></span>
+</sc-for>
+</span>
+</button>
+</sc-for>
+</div>
+</section>
+</div>
+<aside style="flex: 1 1 300px; max-width: 360px; margin-top: 70px; padding: 24px; border-radius: 28px; display: flex; flex-direction: column; gap: 18px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<dl style="margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 12px 16px; font-size: 14px">
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">LOOK</dt><dd style="margin: 0; text-align: right">{{sumLook}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">MODEL</dt><dd style="margin: 0; text-align: right">{{sumModel}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">STORYBOARD</dt><dd style="margin: 0; text-align: right">{{sumBoard}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">LENGTH</dt><dd style="margin: 0; text-align: right; font-variant-numeric: tabular-nums">{{sumLen}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">SHOTS</dt><dd style="margin: 0; text-align: right; font-variant-numeric: tabular-nums">{{sumShots}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">CLIPS</dt><dd style="margin: 0; text-align: right; font-variant-numeric: tabular-nums">{{sumClips}}</dd>
+<dt style="font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; align-self: center">COST</dt><dd style="margin: 0; text-align: right">[CREDITS]</dd>
+</dl>
+<a href="Preview.dc.html" style="height: 48px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; display: flex; align-items: center; justify-content: center">GENERATE KEYFRAMES</a>
+</aside>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { look: 0, light: 0, room: 0, model: 0, modelC: false, board: 0 };
+}
+renderVals() {
+const s = this.state;
+const on = '1.5px solid #1A1A1A', off = '1px solid rgba(255,255,255,0.9)';
+const F = '#D9D4CA', D = '#8A857C', T = '#1A1A1A';
+const strip = (codes) => codes.split('').map((ch) => ({ f: 1, c: ch === 'f' ? F : ch === 'd' ? D : T }));
+const looks = ['Bedroom haul', 'Studio white', 'Closet mirror', 'Warm apartment'];
+const lookLight = [0, 1, 0, 2], lookRoom = [0, 1, 2, 3];
+const lights = ['OVERCAST', 'SOFTBOX', 'GOLDEN HOUR'];
+const rooms = ['BEDROOM', 'STUDIO', 'CLOSET', 'APARTMENT'];
+const modelNames = ['Model A', 'Model B', 'Model C'];
+const boardDefs = [
+{ name: 'Haul + try-on', len: '15s', shots: 11, clips: 3, codes: 'tfdddtttttt' },
+{ name: 'Flat lay only', len: '10s', shots: 8, clips: 2, codes: 'fddddddf' },
+{ name: 'Try-on first', len: '15s', shots: 10, clips: 3, codes: 'ttttfddttt' }
+];
+const pickLook = (i) => () => this.setState({ look: i, light: lookLight[i], room: lookRoom[i] });
+const pickModel = (i) => () => this.setState({ model: i });
+const b = boardDefs[s.board];
+return {
+light: lights[s.light],
+room: rooms[s.room],
+cycleLight: () => this.setState({ light: (s.light + 1) % lights.length }),
+cycleRoom: () => this.setState({ room: (s.room + 1) % rooms.length }),
+look0: pickLook(0), look1: pickLook(1), look2: pickLook(2), look3: pickLook(3),
+lb0: s.look === 0 ? on : off, lb1: s.look === 1 ? on : off, lb2: s.look === 2 ? on : off, lb3: s.look === 3 ? on : off,
+model0: pickModel(0), model1: pickModel(1), model2: pickModel(2),
+mb0: s.model === 0 ? on : off, mb1: s.model === 1 ? on : off, mb2: s.model === 2 ? on : off,
+hasModelC: s.modelC, noModelC: !s.modelC,
+addModel: () => this.setState({ modelC: true, model: 2 }),
+boards: boardDefs.map((d, i) => ({ name: d.name, meta: d.len + ' · ' + d.shots + ' shots', border: s.board === i ? on : off, shots: strip(d.codes), pick: () => this.setState({ board: i }) })),
+sumLook: looks[s.look],
+sumModel: modelNames[s.model],
+sumBoard: b.name,
+sumLen: b.len,
+sumShots: String(b.shots),
+sumClips: String(b.clips)
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>

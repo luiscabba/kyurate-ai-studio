@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Generating · Kyurate AI Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#1A1A1A}a:hover{color:#5A5A5A}
+@keyframes kyUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kyFade{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kyLift{0%,100%{transform:none}35%{transform:translateY(-8px)}}
+@keyframes kyShimmer{from{background-position:-200px 0}to{background-position:200px 0}}
+header{animation:kyFade .5s ease both}
+h1{animation:kyUp .6s .05s cubic-bezier(.2,.7,.2,1) both}
+section{animation:kyUp .6s .12s cubic-bezier(.2,.7,.2,1) both}
+section+section{animation-delay:.2s}
+section+section+section{animation-delay:.28s}
+.tile{position:relative;display:block;box-sizing:border-box;border-radius:22%}
+.cream{background:#EEE8DC;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -2px 3px rgba(120,100,70,.1),0 2px 0 #DDD4C3,0 3px 0 #D1C7B4,0 8px 12px rgba(60,45,25,.12)}
+.black{background:#252322;box-shadow:inset 0 1px 0 rgba(255,255,255,.06),inset 0 -2px 4px rgba(0,0,0,.3),0 2px 0 #141312,0 3px 0 #0B0B0A,0 8px 14px rgba(0,0,0,.2)}
+.is-busy .tile{animation:kyLift 1.2s ease-in-out infinite}
+.ky-running{background-image:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,.45) 50%,rgba(255,255,255,0) 100%);background-size:200px 100%;background-repeat:no-repeat;animation:kyShimmer 1.2s linear infinite}
+a,button{transition:transform .18s ease,background-color .2s ease,box-shadow .2s ease,color .2s ease}
+button:not(:disabled):hover,a[href]:hover{transform:translateY(-1px)}
+button:not(:disabled):active,a[href]:active{transform:scale(.97);transition-duration:.08s}
+:focus-visible{outline:2px solid #1A1A1A;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+<style>html,body{margin:0;background:#F3F1EC}</style>
+</head>
+<body>
+<div id="root"></div>
+<template id="dc-template">
+
+<div style="position: relative; min-height: 960px; overflow: hidden; background: #F3F1EC; font-family: 'Inter', sans-serif; color: #1A1A1A">
+<svg aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%"><defs><pattern id="changsal-light" width="120" height="120" patternUnits="userSpaceOnUse"><rect x="0.5" y="0.5" width="119" height="119" fill="none" stroke="#1A1A1A" stroke-opacity="0.05"></rect><path d="M60 0V120M0 60H120M30 30H90V90H30Z" fill="none" stroke="#1A1A1A" stroke-opacity="0.04"></path></pattern></defs><rect width="100%" height="100%" fill="url(#changsal-light)"></rect></svg>
+<div style="position: absolute; right: 28px; bottom: 18px; z-index: 5; font-size: 11px; letter-spacing: 0.06em; color: rgba(26,26,26,0.45); pointer-events: none">Developed by <span style="font-weight: 600; color: rgba(26,26,26,0.7)">texxen</span></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 28px; padding: 24px 40px 56px; max-width: 1320px; margin: 0 auto; box-sizing: border-box">
+<header style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 24px; padding: 12px 16px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.8); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.08)">
+<nav aria-label="Steps" style="display: flex; flex-wrap: wrap; gap: 2px; font-size: 11px; letter-spacing: 0.08em">
+<a href="Upload.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">UPLOAD</a>
+<a href="Lock.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">LOCK</a>
+<a href="Setup.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">SETUP</a>
+<a href="Preview.dc.html" style="padding: 7px 12px; color: #1A1A1A; text-decoration: none">PREVIEW</a>
+<span style="padding: 7px 12px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-weight: 600">GENERATE</span>
+<a href="Review.dc.html" style="padding: 7px 12px; color: #8A8A8A; text-decoration: none">REVIEW</a>
+</nav>
+<a href="HomeMix.dc.html" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 2px">
+<span style="font-family: 'Playfair Display', serif; font-weight: 700; font-size: 24px; letter-spacing: 0.02em; line-height: 1">KYURATE</span>
+<span style="font-size: 9px; letter-spacing: 0.32em; color: #5A5A5A">AI STUDIO</span>
+</a>
+<div style="display: flex; justify-content: flex-end; font-size: 11px; letter-spacing: 0.08em; color: #5A5A5A; padding-right: 12px">BLACK SATIN SLIP DRESS</div>
+</header>
+<div style="display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding: 0 8px">
+<div class="{{loaderClass}}" aria-hidden="true" style="display: grid; grid-template-columns: repeat(3, 22px); gap: 4px">
+<sc-for list="{{loader}}" as="t" hint-placeholder-count="9">
+<span class="tile {{t.cls}}" style="width: 22px; height: 22px; animation-delay: {{t.delay}}"></span>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h1 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px">{{title}}</h1>
+<span style="font-size: 13px; color: #5A5A5A; font-variant-numeric: tabular-nums">{{subtitle}}</span>
+</div>
+<sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+<a href="Review.dc.html" style="margin-left: auto; height: 48px; padding: 0 28px; border-radius: 999px; background: #1A1A1A; color: #FFFFFF; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-decoration: none; display: flex; align-items: center">REVIEW SHOTS</a>
+</sc-if>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<sc-for list="{{clips}}" as="g" hint-placeholder-count="3">
+<section style="flex: {{g.flex}}; min-width: 280px; display: flex; flex-direction: column; gap: 14px; padding: 18px; border-radius: 28px; background: rgba(255,255,255,0.5); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 0 4px">
+<h2 style="margin: 0; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 20px">{{g.name}}</h2>
+<span style="font-size: 12px; color: #5A5A5A">{{g.shotsLabel}}</span>
+<span style="margin-left: auto; font-size: 10px; font-weight: 600; letter-spacing: 0.08em; color: {{g.statusColor}}">{{g.status}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 10px">
+<sc-for list="{{g.shots}}" as="s" hint-placeholder-count="4">
+<div style="position: relative; aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; background: #E6E2DA">
+<sc-if value="{{s.img}}" hint-placeholder-val="{{true}}"><img src="{{s.img}}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: {{g.imgOpacity}}; filter: {{g.imgFilter}}; transition: opacity .6s ease, filter .6s ease"></sc-if>
+<sc-if value="{{s.noImg}}" hint-placeholder-val="{{false}}"><div style="width: 100%; height: 100%; background: repeating-linear-gradient(135deg, #E6E2DA 0 8px, #DEDAD1 8px 16px)"></div></sc-if>
+<span style="position: absolute; left: 6px; top: 6px; font-size: 10px; font-weight: 600; padding: 3px 7px; border-radius: 999px; background: rgba(255,255,255,0.8); font-variant-numeric: tabular-nums">{{s.n}}</span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="height: 6px; border-radius: 3px; background: rgba(26,26,26,0.08); overflow: hidden"><div class="{{g.barClass}}" style="height: 6px; border-radius: 3px; width: {{g.pct}}; background-color: #1A1A1A; transition: width .3s ease"></div></div>
+<div style="display: flex; font-size: 12px; color: #5A5A5A; font-variant-numeric: tabular-nums"><span>{{g.step}}</span><span style="margin-left: auto">{{g.pct}}</span></div>
+</div>
+</section>
+</sc-for>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 14px 24px; border-radius: 999px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border: 1px solid rgba(255,255,255,0.85); box-shadow: inset 0 1px 0 #FFFFFF, 0 10px 30px rgba(26,26,26,0.06)">
+<sc-for list="{{stages}}" as="st" hint-placeholder-count="4">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: {{st.color}}">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: {{st.dot}}"></span>{{st.name}}</span>
+</sc-for>
+</div>
+</div>
+</div>
+</template>
+<script id="dc-script" type="text/plain">
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { tick: 0 };
+}
+componentDidMount() {
+this.iv = setInterval(() => {
+this.setState((s) => (s.tick >= 100 ? s : { tick: s.tick + 1 }));
+}, 90);
+}
+componentWillUnmount() {
+clearInterval(this.iv);
+}
+renderVals() {
+const t = this.state.tick;
+const clipPct = (offset) => Math.max(0, Math.min(100, Math.round((t - offset) * 1.6)));
+const a = clipPct(0), b = clipPct(6), c = clipPct(14);
+const rendered = a === 100 && b === 100 && c === 100;
+const foley = rendered ? Math.min(100, Math.round((t - 76) * 5)) : 0;
+const done = rendered && foley >= 100;
+const clip = (name, pct, shots, flex) => {
+const finished = pct >= 100, started = pct > 0;
+return {
+name, flex, shots,
+shotsLabel: shots.length + ' shots',
+pct: pct + '%',
+status: finished ? 'DONE' : started ? 'RENDERING' : 'QUEUED',
+statusColor: finished ? '#1F5E3D' : started ? '#1A1A1A' : '#8A8A8A',
+step: finished ? 'Matched to lock' : started ? 'Generating video' : 'Waiting',
+barClass: started && !finished ? 'ky-running' : '',
+imgOpacity: finished ? 1 : 0.35 + pct / 200,
+imgFilter: finished ? 'none' : 'blur(' + Math.round((100 - pct) / 12) + 'px) grayscale(0.6)'
+};
+};
+const sh = (n, img) => ({ n, img: img || '', noImg: !img });
+const order = [[0,0],[1,0],[2,0],[0,1],[1,1],[2,1],[0,2],[1,2],[2,2]];
+const blackSet = new Set(['0-0','1-0','2-0','1-1','0-2','2-2']);
+const stage = (name, state) => ({ name, color: state === 'todo' ? '#8A8A8A' : '#1A1A1A', dot: state === 'done' ? '#1F5E3D' : state === 'now' ? '#1A1A1A' : 'rgba(26,26,26,0.15)' });
+return {
+done,
+title: done ? 'Ready for review' : 'Generating',
+subtitle: done ? '11 shots · 15s · foley mixed' : rendered ? 'Mixing foley · ' + foley + '%' : 'About ' + Math.max(1, Math.round((100 - t) * 0.09)) + ' min left',
+loaderClass: done ? '' : 'is-busy',
+loader: order.map(([r, col]) => ({ cls: blackSet.has(r + '-' + col) ? 'black' : 'cream', delay: ((r + col) * 0.12).toFixed(2) + 's' })),
+clips: [
+clip('Clip A', a, [sh('01'), sh('02', 'assets/d1.jpg'), sh('03', 'assets/d3.jpg'), sh('04', 'assets/d6.jpg')], '4 1 0'),
+clip('Clip B', b, [sh('05', 'assets/d4.jpg'), sh('06'), sh('07'), sh('08')], '4 1 0'),
+clip('Clip C', c, [sh('09'), sh('10'), sh('11', 'assets/d8.jpg')], '3 1 0')
+],
+stages: [
+stage('VIDEO', rendered ? 'done' : 'now'),
+stage('SHOT QA', rendered ? 'done' : 'todo'),
+stage('FOLEY', done ? 'done' : rendered ? 'now' : 'todo'),
+stage('FINISH', done ? 'done' : 'todo')
+]
+};
+}
+}
+</script>
+<script type="module">import { mount } from './vendor/dc.js'; mount();</script>
+</body>
+</html>
